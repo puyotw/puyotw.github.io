@@ -13,9 +13,9 @@
 <meta property="og:url" content="https://puyo.tw/wiki/D_rules/a_scoreformula" />
 <meta property="og:site_name" content="魔法氣泡中文百科" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-03-02T07:54:06+00:00" />
+<meta property="article:published_time" content="2019-03-03T08:10:24+00:00" />
 <script type="application/ld+json">
-{"description":"本百科整合散落網路上的魔法氣泡玩法、連鎖概念、戰術等資料並中文化，務求能藉此推廣魔法氣泡到更多中文玩家，壯大魔法氣泡中文圈子。","@type":"BlogPosting","url":"https://puyo.tw/wiki/D_rules/a_scoreformula","headline":"障礙氣泡量公式","dateModified":"2019-03-02T07:54:06+00:00","datePublished":"2019-03-02T07:54:06+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://puyo.tw/wiki/D_rules/a_scoreformula"},"@context":"http://schema.org"}</script>
+{"description":"本百科整合散落網路上的魔法氣泡玩法、連鎖概念、戰術等資料並中文化，務求能藉此推廣魔法氣泡到更多中文玩家，壯大魔法氣泡中文圈子。","@type":"BlogPosting","url":"https://puyo.tw/wiki/D_rules/a_scoreformula","headline":"障礙氣泡量公式","dateModified":"2019-03-03T08:10:24+00:00","datePublished":"2019-03-03T08:10:24+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://puyo.tw/wiki/D_rules/a_scoreformula"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"><link type="application/atom+xml" rel="alternate" href="https://puyo.tw/feed.xml" title="魔法氣泡中文百科" /></head>
@@ -181,456 +181,234 @@
 
 <h2 id="分數計算基本概念">分數計算：基本概念</h2>
 
-<p>當玩家發動一個總數為(n)的連鎖時，送給對手的障礙氣泡總數為</p>
+<p>當玩家發動一個總數為 <script type="math/tex">n</script> 的連鎖時，送給對手的障礙氣泡總數為</p>
 
-<p>\begin{align}
-&amp; \text{送給對手的障礙氣泡總數} <br />
-= &amp; \left\lfloor \frac{1}{70} \left( \sum_{k=1}^{n}\text{第(k)連鎖得分}S_k + \text{連鎖發動前累積的落下得分}\right)\right\rfloor
-\end{align}</p>
+<script type="math/tex; mode=display">\text{送給對手的障礙氣泡總數} = \left\lfloor 
+    \frac{1}{70} \left( 
+        \sum_{k=1}^{n}\text{第 } k \text{ 連鎖得分 } S_k + \text{連鎖發動前累積的落下得分}
+    \right)
+\right\rfloor</script>
 
-<p>其中(\lfloor \ \rfloor)是向下取整，整個公式的意思是取括號內數字除以(70)的商。這個(70)就是「障礙氣泡的換算率」，預設為(70)，在近幾個版本玩家都能在遊戲內調整換算率。</p>
+<p>其中 <script type="math/tex">\lfloor \ \rfloor</script> 是向下取整，整個公式的意思是取括號內數字除以 <script type="math/tex">70</script> 的商。這個 <script type="math/tex">70</script> 就是「障礙氣泡的換算率」，預設為 <script type="math/tex">70</script>，在近幾個版本玩家都能在遊戲內調整換算率。</p>
 
-<p>公式中的落下得分，其計算方式為，緩降（soft drop）時氣泡經過一格加一分。發動完(n)連鎖後，累積的這些落下得分與每次連鎖得分相加，除完(70)的商是障礙氣泡量，餘數則保存起來，待下次發動連鎖時一倂納入計算。(n)連鎖中每個連鎖的分數都是個別計算，彼此不相關，算完後加總起來。以下讓(k)固定，討論第(k)連鎖的得分(S_k)的計算方式。</p>
+<p>公式中的落下得分，其計算方式為，緩降（soft drop）時氣泡經過一格加一分。發動完 <script type="math/tex">n</script> 連鎖後，累積的這些落下得分與每次連鎖得分相加，除完 <script type="math/tex">70</script> 的商是障礙氣泡量，餘數則保存起來，待下次發動連鎖時一倂納入計算。<script type="math/tex">n</script> 連鎖中每個連鎖的分數都是個別計算，彼此不相關，算完後加總起來。以下讓 <script type="math/tex">k</script> 固定，討論第 <script type="math/tex">k</script> 連鎖的得分 <script type="math/tex">S_k</script> 的計算方式。</p>
 
-<h2 id="第k連鎖得分s_k">第(k)連鎖得分(S_k)</h2>
+<h2 id="第-k-連鎖得分-s_k">第 <script type="math/tex">k</script> 連鎖得分 <script type="math/tex">S_k</script></h2>
 
-<p>(S_k)的計算方式與下列四個數字息息相關：</p>
+<p><script type="math/tex">S_k</script> 的計算方式與下列四個數字息息相關：</p>
 <ul>
-  <li>第(k)連鎖消除的氣泡數(t)</li>
-  <li>(k)的值</li>
-  <li>第(k)連鎖消除的顏色數(c)</li>
-  <li>第(k)連鎖的各連結數(l_i)</li>
+  <li>第 <script type="math/tex">k</script> 連鎖消除的氣泡數 <script type="math/tex">t</script></li>
+  <li><script type="math/tex">k</script> 的值</li>
+  <li>第 <script type="math/tex">k</script> 連鎖消除的顏色數 <script type="math/tex">c</script></li>
+  <li>第 <script type="math/tex">k</script> 連鎖的各連結數 <script type="math/tex">l_i</script></li>
 </ul>
 
-<p>更精確來說，(k)、(c)、(l)後面有三個函數分別決定這些值對應到的「獎勵（bonus）」是多少，而這些獎勵與氣泡數(t)會一起決定(S_k)。</p>
+<p>更精確來說，<script type="math/tex">k</script> 、<script type="math/tex">c</script>、<script type="math/tex">l</script> 後面有三個函數分別決定這些值對應到的「獎勵（bonus）」是多少，而這些獎勵與氣泡數 <script type="math/tex">t</script> 會一起決定 <script type="math/tex">S_k</script>。</p>
 
-<h3 id="1-氣泡數t">1. 氣泡數(t)</h3>
+<h3 id="1-氣泡數-t">1. 氣泡數 <script type="math/tex">t</script></h3>
 
-<p>指的是在第(k)連鎖消除的所有氣泡數，這應該不須多做解釋～</p>
+<p>指的是在第 <script type="math/tex">k</script> 連鎖消除的所有氣泡數，這應該不須多做解釋～</p>
 
-<h3 id="2-k的值">2. (k)的值</h3>
+<h3 id="2-k-的值">2. <script type="math/tex">k</script> 的值</h3>
 
-<p>(k)的值與連鎖獎勵（命名為(R(k))）的關係由下表給出：</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">(k)的值</th>
-      <th style="text-align: center">連鎖獎勵(R(k))</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">(1)</td>
-      <td style="text-align: center">(0)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(2)</td>
-      <td style="text-align: center">(8)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(3)</td>
-      <td style="text-align: center">(16)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(4)</td>
-      <td style="text-align: center">(32)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(5)</td>
-      <td style="text-align: center">(64)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(6)</td>
-      <td style="text-align: center">(96)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(7)</td>
-      <td style="text-align: center">(128)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(8)</td>
-      <td style="text-align: center">(160)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(9)</td>
-      <td style="text-align: center">(192)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(10)</td>
-      <td style="text-align: center">(224)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(11)</td>
-      <td style="text-align: center">(256)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(12)</td>
-      <td style="text-align: center">(288)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(13)</td>
-      <td style="text-align: center">(320)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(14)</td>
-      <td style="text-align: center">(352)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(15)</td>
-      <td style="text-align: center">(384)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(16)</td>
-      <td style="text-align: center">(416)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(17)</td>
-      <td style="text-align: center">(448)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(18)</td>
-      <td style="text-align: center">(480)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(19)</td>
-      <td style="text-align: center">(512)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>可以發現到，第(1)連鎖沒有獎勵，<strong>(2)連鎖～(5)連鎖的獎勵倍增，而(5)連鎖以上固定是每次加(32)分</strong>。</p>
-
-<h3 id="3-此連鎖消除的顏色數c">3. 此連鎖消除的顏色數(c)</h3>
+<p><script type="math/tex">k</script> 的值與連鎖獎勵（命名為<script type="math/tex">R(k)</script>）的關係由下表給出：</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">顏色數(c)</th>
-      <th style="text-align: center">色數獎勵(C(c))</th>
+      <th style="text-align: center"><script type="math/tex">k</script> 的值</th>
+      <th style="text-align: center">連鎖獎勵 <script type="math/tex">R(k)</script></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">(1)</td>
-      <td style="text-align: center">(0)</td>
+      <td style="text-align: center"><script type="math/tex">1</script></td>
+      <td style="text-align: center"><script type="math/tex">0</script></td>
     </tr>
     <tr>
-      <td style="text-align: center">(2)</td>
-      <td style="text-align: center">(3)</td>
+      <td style="text-align: center"><script type="math/tex">2</script></td>
+      <td style="text-align: center"><script type="math/tex">8</script></td>
     </tr>
     <tr>
-      <td style="text-align: center">(3)</td>
-      <td style="text-align: center">(6)</td>
+      <td style="text-align: center"><script type="math/tex">3</script></td>
+      <td style="text-align: center"><script type="math/tex">16</script></td>
     </tr>
     <tr>
-      <td style="text-align: center">(4)</td>
-      <td style="text-align: center">(12)</td>
+      <td style="text-align: center"><script type="math/tex">4</script></td>
+      <td style="text-align: center"><script type="math/tex">32</script></td>
     </tr>
     <tr>
-      <td style="text-align: center">(5)</td>
-      <td style="text-align: center">(24)</td>
+      <td style="text-align: center"><script type="math/tex">5</script></td>
+      <td style="text-align: center"><script type="math/tex">64</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">6</script></td>
+      <td style="text-align: center"><script type="math/tex">96</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">7</script></td>
+      <td style="text-align: center"><script type="math/tex">128</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">8</script></td>
+      <td style="text-align: center"><script type="math/tex">160</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">9</script></td>
+      <td style="text-align: center"><script type="math/tex">192</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">10</script></td>
+      <td style="text-align: center"><script type="math/tex">224</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">11</script></td>
+      <td style="text-align: center"><script type="math/tex">256</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">12</script></td>
+      <td style="text-align: center"><script type="math/tex">288</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">13</script></td>
+      <td style="text-align: center"><script type="math/tex">320</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">14</script></td>
+      <td style="text-align: center"><script type="math/tex">352</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">15</script></td>
+      <td style="text-align: center"><script type="math/tex">384</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">16</script></td>
+      <td style="text-align: center"><script type="math/tex">416</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">17</script></td>
+      <td style="text-align: center"><script type="math/tex">448</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">18</script></td>
+      <td style="text-align: center"><script type="math/tex">480</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">19</script></td>
+      <td style="text-align: center"><script type="math/tex">512</script></td>
     </tr>
   </tbody>
 </table>
 
-<p>同樣地，單色沒有獎勵，不過(2)色～(5)色的獎勵都是倍數成長。要注意的是，<strong>這個表跟(k)沒有關係</strong>，不因(k)的大小決定這個表的值；不論連鎖是大是小，每一次消除時都會看消了幾個顏色，只用這個來決定色數獎勵。</p>
+<p>可以發現到，第 <script type="math/tex">1</script> 連鎖沒有獎勵，<strong><script type="math/tex">2</script> 連鎖～<script type="math/tex">5</script> 連鎖的獎勵倍增，而 <script type="math/tex">5</script> 連鎖以上固定是每次加 <script type="math/tex">32</script> 分</strong>。</p>
 
-<h3 id="4-連結數l">4. 連結數(l)</h3>
+<h3 id="3-此連鎖消除的顏色數-c">3. 此連鎖消除的顏色數 <script type="math/tex">c</script></h3>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">連結數(l)</th>
-      <th style="text-align: center">連結獎勵(L(l))</th>
+      <th style="text-align: center">顏色數 <script type="math/tex">c</script></th>
+      <th style="text-align: center">色數獎勵 <script type="math/tex">C(c)</script></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">(4)</td>
-      <td style="text-align: center">(0)</td>
+      <td style="text-align: center"><script type="math/tex">1</script></td>
+      <td style="text-align: center"><script type="math/tex">0</script></td>
     </tr>
     <tr>
-      <td style="text-align: center">(5)</td>
-      <td style="text-align: center">(2)</td>
+      <td style="text-align: center"><script type="math/tex">2</script></td>
+      <td style="text-align: center"><script type="math/tex">3</script></td>
     </tr>
     <tr>
-      <td style="text-align: center">(6)</td>
-      <td style="text-align: center">(3)</td>
+      <td style="text-align: center"><script type="math/tex">3</script></td>
+      <td style="text-align: center"><script type="math/tex">6</script></td>
     </tr>
     <tr>
-      <td style="text-align: center">(7)</td>
-      <td style="text-align: center">(4)</td>
+      <td style="text-align: center"><script type="math/tex">4</script></td>
+      <td style="text-align: center"><script type="math/tex">12</script></td>
     </tr>
     <tr>
-      <td style="text-align: center">(8)</td>
-      <td style="text-align: center">(5)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(9)</td>
-      <td style="text-align: center">(6)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(10)</td>
-      <td style="text-align: center">(7)</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">(\ge11)</td>
-      <td style="text-align: center">(10)</td>
+      <td style="text-align: center"><script type="math/tex">5</script></td>
+      <td style="text-align: center"><script type="math/tex">24</script></td>
     </tr>
   </tbody>
 </table>
 
-<p>同樣地，這個表也跟(k)的大小沒關係，只用連結數多寡來決定獎勵。由於(4)顆氣泡是最低能消除的數量，這邊就定成(4)連結沒有獎勵。</p>
+<p>同樣地，單色沒有獎勵，不過 <script type="math/tex">2</script> 色～<script type="math/tex">5</script> 色的獎勵都是倍數成長。要注意的是，<strong>這個表跟 <script type="math/tex">k</script> 沒有關係</strong>，不因 <script type="math/tex">k</script> 的大小決定這個表的值；不論連鎖是大是小，每一次消除時都會看消了幾個顏色，只用這個來決定色數獎勵。</p>
 
-<p>另外，觀察一下可以發現到，連結數從(4)到(5)時獎勵(+2)，從(10)到(11)時獎勵(+3)，因此<strong>(5)連結與(11)連結是很有效率的</strong>；另一方面，<strong>(12)以上的連結則效率低落</strong>，因為他們跟(11)連結有一樣的獎勵。</p>
+<h3 id="4-連結數-l">4. 連結數 <script type="math/tex">l</script></h3>
 
-<p>還有一個要注意的點是，如果第(k)連鎖消掉的氣泡分成好幾個彼此內部相連的群組，那<strong>每個連結群都會計算一次連結獎勵</strong>！舉例來說，請看下面這張圖：</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">連結數 <script type="math/tex">l</script></th>
+      <th style="text-align: center">連結獎勵 <script type="math/tex">L(l)</script></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">4</script></td>
+      <td style="text-align: center"><script type="math/tex">0</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">5</script></td>
+      <td style="text-align: center"><script type="math/tex">2</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">6</script></td>
+      <td style="text-align: center"><script type="math/tex">3</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">7</script></td>
+      <td style="text-align: center"><script type="math/tex">4</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">8</script></td>
+      <td style="text-align: center"><script type="math/tex">5</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">9</script></td>
+      <td style="text-align: center"><script type="math/tex">6</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">10</script></td>
+      <td style="text-align: center"><script type="math/tex">7</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex">\ge11</script></td>
+      <td style="text-align: center"><script type="math/tex">10</script></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>同樣地，這個表也跟 <script type="math/tex">k</script> 的大小沒關係，只用連結數多寡來決定獎勵。由於 <script type="math/tex">4</script> 顆氣泡是最低能消除的數量，這邊就定成 <script type="math/tex">4</script> 連結沒有獎勵。</p>
+
+<p>另外，觀察一下可以發現到，連結數從 <script type="math/tex">4</script> 到 <script type="math/tex">5</script> 時獎勵 <script type="math/tex">+2</script> ，從 <script type="math/tex">10</script> 到 <script type="math/tex">11</script> 時獎勵 <script type="math/tex">+3</script> ，因此 <strong><script type="math/tex">5</script> 連結與 <script type="math/tex">11</script> 連結是很有效率的</strong>；另一方面，<strong><script type="math/tex">12</script> 以上的連結則效率低落</strong>，因為他們跟 <script type="math/tex">11</script> 連結有一樣的獎勵。</p>
+
+<p>還有一個要注意的點是，如果第 <script type="math/tex">k</script> 連鎖消掉的氣泡分成好幾個彼此內部相連的群組，那<strong>每個連結群都會計算一次連結獎勵</strong>！舉例來說，請看下面這張圖：</p>
 
 <p><img src="https://i.imgur.com/fzHcsaz.png" alt="連結獎勵解釋" /></p>
 
-<p>此圖消除的氣泡有綠色五連結、綠色六連結、黃色五連結、藍色四連結，所以總共的連結獎勵是(3+2+3+0=8)！</p>
+<p>此圖消除的氣泡有綠色五連結、綠色六連結、黃色五連結、藍色四連結，所以總共的連結獎勵是 <script type="math/tex">3+2+3+0=8</script>！</p>
 
-<h3 id="5-s_k計算方式">5. (S_k)計算方式</h3>
+<h3 id="5-s_k-計算方式">5. <script type="math/tex">S_k</script> 計算方式</h3>
 
-<p>現在，我們可以用上面這些數字來表示第(k)連鎖得分的公式了。令第(k)連鎖消除的總氣泡數為(t)，消除了(c)個顏色。另外，假設第(k)連鎖消除的所有氣泡分成(g)個連結群，而每一群有(l_i)個氣泡，(i=, \cdots, g)（因此(\sum_{i=1}^{g}l_i=t)）。</p>
+<p>現在，我們可以用上面這些數字來表示第 <script type="math/tex">k</script> 連鎖得分的公式了。令第 <script type="math/tex">k</script> 連鎖消除的總氣泡數為 <script type="math/tex">t</script>，消除了 <script type="math/tex">c</script> 個顏色。另外，假設第 <script type="math/tex">k</script> 連鎖消除的所有氣泡分成 <script type="math/tex">g</script> 個連結群，而每一群有 <script type="math/tex">l_i</script> 個氣泡，<script type="math/tex">i = 1, \cdots, g</script>（因此 <script type="math/tex">\sum_{i=1}^{g}l_i=t</script>）。</p>
 
-<p>則第(k)連鎖的得分(S_k)為</p>
-
-<p>當玩家發動一個總數為$n$的連鎖時，送給對手的障礙氣泡總數為</p>
-
-<p>\begin{align<em>}
-&amp; \text{送給對手的障礙氣泡總數} <br />
-= &amp; \left\lfloor \frac{1}{70} \left( \sum_{k=1}^{n}\text{第$k$連鎖得分}S_k + \text{連鎖發動前累積的落下得分}\right)\right\rfloor
-\end{align</em>}</p>
-
-<p>其中$\lfloor \ \rfloor$是向下取整，整個公式的意思是取括號內數字除以$70$的商。這個$70$就是「障礙氣泡的換算率」，預設為$70$，在近幾個版本玩家都能在遊戲內調整換算率。</p>
-
-<p>公式中的落下得分，其計算方式為，緩降（soft drop）時氣泡經過一格加一分。發動完$n$連鎖後，累積的這些落下得分與每次連鎖得分相加，除完$70$的商是障礙氣泡量，餘數則保存起來，待下次發動連鎖時一倂納入計算。$n$連鎖中每個連鎖的分數都是個別計算，彼此不相關，算完後加總起來。以下讓$k$固定，討論第$k$連鎖的得分$S_k$的計算方式。</p>
-
-<h2 id="第k連鎖得分s_k-1">第$k$連鎖得分$S_k$</h2>
-
-<p>$S_k$的計算方式與下列四個數字息息相關：</p>
-<ul>
-  <li>第$k$連鎖消除的氣泡數$t$</li>
-  <li>$k$的值</li>
-  <li>第$k$連鎖消除的顏色數$c$</li>
-  <li>第$k$連鎖的各連結數$l_i$</li>
-</ul>
-
-<p>更精確來說，$k$、$c$、$l$後面有三個函數分別決定這些值對應到的「獎勵（bonus）」是多少，而這些獎勵與氣泡數$t$會一起決定$S_k$。</p>
-
-<h3 id="1-氣泡數t-1">1. 氣泡數$t$</h3>
-
-<p>指的是在第$k$連鎖消除的所有氣泡數，這應該不須多做解釋～</p>
-
-<h3 id="2-k的值-1">2. $k$的值</h3>
-
-<p>$k$的值與連鎖獎勵（命名為$R(k)$）的關係由下表給出：</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">$k$的值</th>
-      <th style="text-align: center">連鎖獎勵$R(k)$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">$1$</td>
-      <td style="text-align: center">$0$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$2$</td>
-      <td style="text-align: center">$8$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$3$</td>
-      <td style="text-align: center">$16$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$4$</td>
-      <td style="text-align: center">$32$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$5$</td>
-      <td style="text-align: center">$64$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$6$</td>
-      <td style="text-align: center">$96$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$7$</td>
-      <td style="text-align: center">$128$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$8$</td>
-      <td style="text-align: center">$160$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$9$</td>
-      <td style="text-align: center">$192$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$10$</td>
-      <td style="text-align: center">$224$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$11$</td>
-      <td style="text-align: center">$256$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$12$</td>
-      <td style="text-align: center">$288$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$13$</td>
-      <td style="text-align: center">$320$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$14$</td>
-      <td style="text-align: center">$352$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$15$</td>
-      <td style="text-align: center">$384$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$16$</td>
-      <td style="text-align: center">$416$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$17$</td>
-      <td style="text-align: center">$448$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$18$</td>
-      <td style="text-align: center">$480$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$19$</td>
-      <td style="text-align: center">$512$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>可以發現到，第$1$連鎖沒有獎勵，<strong>$2$連鎖～$5$連鎖的獎勵倍增，而$5$連鎖以上固定是每次加$32$分</strong>。</p>
-
-<h3 id="3-此連鎖消除的顏色數c-1">3. 此連鎖消除的顏色數$c$</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">顏色數$c$</th>
-      <th style="text-align: center">色數獎勵$C(c)$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">$1$</td>
-      <td style="text-align: center">$0$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$2$</td>
-      <td style="text-align: center">$3$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$3$</td>
-      <td style="text-align: center">$6$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$4$</td>
-      <td style="text-align: center">$12$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$5$</td>
-      <td style="text-align: center">$24$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>同樣地，單色沒有獎勵，不過$2$色～$5$色的獎勵都是倍數成長。要注意的是，<strong>這個表跟$k$沒有關係</strong>，不因$k$的大小決定這個表的值；不論連鎖是大是小，每一次消除時都會看消了幾個顏色，只用這個來決定色數獎勵。</p>
-
-<h3 id="4-連結數l-1">4. 連結數$l$</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">連結數$l$</th>
-      <th style="text-align: center">連結獎勵$L(l)$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">$4$</td>
-      <td style="text-align: center">$0$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$5$</td>
-      <td style="text-align: center">$2$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$6$</td>
-      <td style="text-align: center">$3$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$7$</td>
-      <td style="text-align: center">$4$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$8$</td>
-      <td style="text-align: center">$5$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$9$</td>
-      <td style="text-align: center">$6$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$10$</td>
-      <td style="text-align: center">$7$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$\ge11$</td>
-      <td style="text-align: center">$10$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>同樣地，這個表也跟$k$的大小沒關係，只用連結數多寡來決定獎勵。由於$4$顆氣泡是最低能消除的數量，這邊就定成$4$連結沒有獎勵。</p>
-
-<p>另外，觀察一下可以發現到，連結數從$4$到$5$時獎勵$+2$，從$10$到$11$時獎勵$+3$，因此<strong>$5$連結與$11$連結是很有效率的</strong>；另一方面，<strong>$12$以上的連結則效率低落</strong>，因為他們跟$11$連結有一樣的獎勵。</p>
-
-<p>還有一個要注意的點是，如果第$k$連鎖消掉的氣泡分成好幾個彼此內部相連的群組，那<strong>每個連結群都會計算一次連結獎勵</strong>！舉例來說，請看下面這張圖：</p>
-
-<p><img src="https://i.imgur.com/fzHcsaz.png" alt="連結獎勵解釋" /></p>
-
-<p>此圖消除的氣泡有綠色五連結、綠色六連結、黃色五連結、藍色四連結，所以總共的連結獎勵是$3+2+3+0=8$！</p>
-
-<h3 id="5-s_k計算方式-1">5. $S_k$計算方式</h3>
-
-<p>現在，我們可以用上面這些數字來表示第$k$連鎖得分的公式了。令第$k$連鎖消除的總氣泡數為$t$，消除了$c$個顏色。另外，假設第$k$連鎖消除的所有氣泡分成$g$個連結群，而每一群有$l_i$個氣泡，$i=, \cdots, g$（因此$\sum_{i=1}^{g}l_i=t$）。</p>
-
-<p>則第$k$連鎖的得分$S_k$為</p>
+<p>則第 <script type="math/tex">k</script> 連鎖的得分 <script type="math/tex">S_k</script> 為</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-S_k=
-\begin{cases}
-40&, \text{若}(k,t)=(1,4) \\
-10t\left( R(k)+C(c)+\sum_{i=1}^{g} L(l_i) \right)&, \text{若}(k,t)\neq(1,4)
+S_k = \begin{cases}
+    40                                                    &, \text{若 } (k,t)   =  (1,4) \\ 
+    10t \left( R(k) + C(c) +\sum_{i=1}^{g} L(l_i) \right) &, \text{若 } (k,t) \neq (1,4)
 \end{cases} %]]></script>
 
-<p>也就是說，如果(k=1)，而且只消除四顆氣泡，那以上三種獎勵函數的值都是(0)，此情況就直接定義得分為(10t=40)分；而其他情況就照著上面的表帶值，算完總和後一樣在外面乘以(10t)。</p>
+<p>也就是說，如果 <script type="math/tex">k=1</script>，而且只消除四顆氣泡，那以上三種獎勵函數的值都是 <script type="math/tex">0</script>，此情況就直接定義得分為 <script type="math/tex">10t=40</script> 分；而其他情況就照著上面的表帶值，算完總和後一樣在外面乘以 <script type="math/tex">10t</script>。</p>
 
 <h2 id="分數計算實例">分數計算：實例</h2>
 
-<p>至此我們說明了(S_k)的計算方法，但是別忘記，發動一個$n$連鎖時需要計算每個(S_k)再加總起來的。我們就來使用上面的公式算些具體例子吧！回憶一下在<a href="https://puyo.tw/wiki/C_tactics/b_middle/i_intro?t=1549988251767">中盤概論</a>提到的概念，</p>
-
-<p>也就是說，如果$k=1$，而且只消除四顆氣泡，那以上三種獎勵函數的值都是$0$，此情況就直接定義得分為$10t=40$分；而其他情況就照著上面的表帶值，算完總和後一樣在外面乘以$10t$。</p>
-
-<h2 id="分數計算實例-1">分數計算：實例</h2>
-
-<p>至此我們說明了$S_k$的計算方法，但是別忘記，發動一個$n$連鎖時需要計算每個$S_k$再加總起來的。我們就來使用上面的公式算些具體例子吧！回憶一下在<a href="https://puyo.tw/wiki/C_tactics/b_middle/i_intro?t=1549988251767">中盤概論</a>提到的概念，</p>
+<p>至此我們說明了 <script type="math/tex">S_k</script> 的計算方法，但是別忘記，發動一個 <script type="math/tex">n</script> 連鎖時需要計算每個 <script type="math/tex">S_k</script> 再加總起來的。我們就來使用上面的公式算些具體例子吧！回憶一下在<a href="/wiki/C_tactics/b_middle/i_intro">中盤概論</a>提到的概念，</p>
 
 <blockquote>
   <p>「<em>在消掉的氣泡數一樣的前提下，追求高同消與追求高連鎖的分數可能差不多，甚至更多。</em>」──魔法氣泡中文百科</p>
@@ -659,18 +437,18 @@ S_k=
   <tbody>
     <tr>
       <td>第1連鎖</td>
-      <td>(10 \times 5 \times 2 = 100)</td>
-      <td>(10 \times 10 \times (3+2+2)=700)</td>
+      <td><script type="math/tex">10 \times 5 \times 2 = 100</script></td>
+      <td><script type="math/tex">10 \times 10 \times (3+2+2)=700</script></td>
     </tr>
     <tr>
       <td>第2連鎖</td>
-      <td>(10 \times 5 \times (8+2)=500)</td>
+      <td><script type="math/tex">10 \times 5 \times (8+2)=500</script></td>
       <td> </td>
     </tr>
     <tr>
       <td>總分</td>
-      <td>(600)</td>
-      <td>(700)</td>
+      <td><script type="math/tex">600</script></td>
+      <td><script type="math/tex">700</script></td>
     </tr>
   </tbody>
 </table>
@@ -679,18 +457,18 @@ S_k=
   <tbody>
     <tr>
       <td>第1連鎖</td>
-      <td>$10 \times 5 \times 2 = 100$</td>
-      <td>10 \times 10 \times (3+2+2)=700</td>
+      <td><script type="math/tex">10 \times 5 \times 2 = 100</script></td>
+      <td><script type="math/tex">10 \times 10 \times (3+2+2)=700</script></td>
     </tr>
     <tr>
       <td>第2連鎖</td>
-      <td>$10 \times 5 \times (8+2)=500$</td>
+      <td><script type="math/tex">10 \times 5 \times (8+2)=500</script></td>
       <td> </td>
     </tr>
     <tr>
       <td>總分</td>
-      <td>$600$</td>
-      <td>$700$</td>
+      <td><script type="math/tex">600</script></td>
+      <td><script type="math/tex">700</script></td>
     </tr>
   </tbody>
 </table>
@@ -718,55 +496,55 @@ S_k=
   <tbody>
     <tr>
       <td>第1連鎖</td>
-      <td>(40$</td>
-      <td>(40$</td>
+      <td><script type="math/tex">40</script></td>
+      <td><script type="math/tex">40</script></td>
     </tr>
     <tr>
       <td>第2連鎖</td>
-      <td>(10 \times 4 \times 8 = 320)</td>
-      <td>(10 \times 8 \times (8+3+0+0)=880)</td>
+      <td><script type="math/tex">10 \times 4 \times 8 = 320</script></td>
+      <td><script type="math/tex">10 \times 8 \times (8+3+0+0)=880</script></td>
     </tr>
     <tr>
       <td>第3連鎖</td>
-      <td>(10 \times 4 \times 16 = 640)</td>
+      <td><script type="math/tex">10 \times 4 \times 16 = 640</script></td>
       <td> </td>
     </tr>
     <tr>
       <td>總分</td>
-      <td>(1000)</td>
-      <td>(920)</td>
+      <td><script type="math/tex">1000</script></td>
+      <td><script type="math/tex">920</script></td>
     </tr>
   </tbody>
 </table>
 
-<p>在此情況，二連雙消只少了(1)～(2)顆氣泡，但能給對手更短的反應時間。</p>
+<p>在此情況，二連雙消只少了 <script type="math/tex">1</script>～<script type="math/tex">2</script> 顆氣泡，但能給對手更短的反應時間。</p>
 
 <table>
   <tbody>
     <tr>
       <td>第1連鎖</td>
-      <td>$40$</td>
-      <td>$40$</td>
+      <td><script type="math/tex">40</script></td>
+      <td><script type="math/tex">40</script></td>
     </tr>
     <tr>
       <td>第2連鎖</td>
-      <td>$10 \times 4 \times 8 = 320$</td>
-      <td>$10 \times 8 \times (8+3+0+0)=880$</td>
+      <td><script type="math/tex">10 \times 4 \times 8 = 320</script></td>
+      <td><script type="math/tex">10 \times 8 \times (8+3+0+0)=880</script></td>
     </tr>
     <tr>
       <td>第3連鎖</td>
-      <td>$10 \times 4 \times 16 = 640$</td>
+      <td><script type="math/tex">10 \times 4 \times 16 = 640</script></td>
       <td> </td>
     </tr>
     <tr>
       <td>總分</td>
-      <td>$1000$</td>
-      <td>$920$</td>
+      <td><script type="math/tex">1000</script></td>
+      <td><script type="math/tex">920</script></td>
     </tr>
   </tbody>
 </table>
 
-<p>在此情況，二連雙消只少了$1$～$2$顆氣泡，但能給對手更短的反應時間。</p>
+<p>在此情況，二連雙消只少了 <script type="math/tex">1</script>～<script type="math/tex">2</script> 顆氣泡，但能給對手更短的反應時間。</p>
 
 <p>最後再舉一個例子。注意到，圖1與圖2告訴我們一個全消戰的較佳策略：如果開場前五手剛好來了5A5B，用圖2的方式不但更快取得全消，而且分數也高，對全消戰很有利。</p>
 
@@ -787,13 +565,12 @@ S_k=
   </tbody>
 </table>
 
-<p>讀者可以自行計算作為練習，結果是：左圖(360)分、右圖(240)分。在4A4B的情況下，兩連鎖雖然會較慢取得全消，但此時攻擊力較高，通常都還是做兩連鎖，而非一連鎖同消。</p>
-
-<p>讀者可以自行計算作為練習，結果是：左圖$360$分、右圖$240$分。在4A4B的情況下，兩連鎖雖然會較慢取得全消，但此時攻擊力較高，通常都還是做兩連鎖，而非一連鎖同消。</p>
+<p>讀者可以自行計算作為練習，結果是：左圖 <script type="math/tex">360</script> 分、右圖 <script type="math/tex">240</script> 分。在4A4B的情況下，兩連鎖雖然會較慢取得全消，但此時攻擊力較高，通常都還是做兩連鎖，而非一連鎖同消。</p>
 
 <h2 id="非預設規則的障礙氣泡">非預設規則的障礙氣泡</h2>
 
-<p>建置中，參考資料<a href="https://puyonexus.com/wiki/List_of_attack_powers">List of attack powers</a>、<a href="https://www.youtube.com/watch?v=hH0j24Rfwcg">2個消し39連鎖</a>## 加倍時間下的障礙氣泡</p>
+<p>建置中，參考資料<a href="https://puyonexus.com/wiki/List_of_attack_powers">List of attack powers</a>、<a href="https://www.youtube.com/watch?v=hH0j24Rfwcg">2個消し39連鎖</a>\</p>
+<h2 id="加倍時間下的障礙氣泡">加倍時間下的障礙氣泡</h2>
 
 <p>建置中，參考資料<a href="http://www.inosendo.com/puyo/margintime.html">ぷよぷよフィーバーにおけるマージンタイム到達後のおじゃまぷよレートの変動調査</a></p>
 
