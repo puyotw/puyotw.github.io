@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant"><head>
+<html lang="zh-Hant" class="has-navbar-fixed-top"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
@@ -20,15 +20,14 @@
 <body><header class="site-header">
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
+      <button id="burger" class="navbar-burger burger__button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a class="navbar-item" rel="author" href="/">
         <img class="navbar-logo" src="https://yt3.ggpht.com/a-/AAuE7mAzF0YlAQv0YQxq35osxnWg0WGqpKzW33Aa=s288-mo-c-c0xffffffff-rj-k-no" width="30" height="30">
         <span>魔法氣泡中文百科</span>
-      </a>
-      <a role="button" class="navbar-burger burger" aria-label="menu"
-      aria-expanded="false" data-target="navbar-items">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
       </a>
     </div>
     <div id="navbar-items" class="navbar-menu">
@@ -37,9 +36,10 @@
   </nav>
 </header>
 <main class="page-content" aria-label="Content">
-      <aside class="sidebar menu">
-  <div class="sidebar__inner"><ul class="menu-list" data-menu-depth="0">
-    <li class=""><a href="/wiki" class="">
+      <aside id="sidebar" class="sidebar menu">
+  <div class="sidebar__wrapper">
+    <div class="sidebar__inner"><ul class="menu-list" data-menu-depth="0">
+    <li class=""><a href="/wiki" class="menu-link">
           魔法氣泡中文百科
         </a><ul class="" data-menu-depth="1">
     <li class=""><input type="checkbox" id="
@@ -53,16 +53,16 @@
             <i class="fas fa-angle-down fa-lg"></i>
           </span>
         </label><ul class="" data-menu-depth="2">
-    <li class=""><a href="/wiki/A_basics/b_three_clear_types" class="">
+    <li class=""><a href="/wiki/A_basics/b_three_clear_types" class="menu-link">
           連鎖的三種成因
         </a></li>
-    <li class=""><a href="/wiki/A_basics/c_add_one_chain" class="">
+    <li class=""><a href="/wiki/A_basics/c_add_one_chain" class="menu-link">
           加一連鎖
         </a></li>
-    <li class=""><a href="/wiki/A_basics/d_add_more_chains" class="">
+    <li class=""><a href="/wiki/A_basics/d_add_more_chains" class="menu-link">
           從加一連鎖，到做出大連鎖
         </a></li>
-    <li class=""><a href="/wiki/A_basics/e_how_to_practice" class="">
+    <li class=""><a href="/wiki/A_basics/e_how_to_practice" class="menu-link">
           如何練習
         </a></li></ul></li>
     <li class=""><input type="checkbox" id="
@@ -98,13 +98,13 @@
             <i class="fas fa-angle-down fa-lg"></i>
           </span>
         </label><ul class="" data-menu-depth="5">
-    <li class=""><a href="/wiki/B_chain/a_overview/i_components/1_vert3" class="">
+    <li class=""><a href="/wiki/B_chain/a_overview/i_components/1_vert3" class="menu-link">
           縱3
         </a></li>
-    <li class=""><a href="/wiki/B_chain/a_overview/i_components/2_hori3" class="">
+    <li class=""><a href="/wiki/B_chain/a_overview/i_components/2_hori3" class="menu-link">
           橫3
         </a></li>
-    <li class=""><a href="/wiki/B_chain/a_overview/i_components/3_L" class="">
+    <li class=""><a href="/wiki/B_chain/a_overview/i_components/3_L" class="menu-link">
           L字
         </a></li></ul></li>
     <li class=""><input type="checkbox" id="
@@ -118,7 +118,7 @@
             <i class="fas fa-angle-down fa-lg"></i>
           </span>
         </label></li></ul></li>
-    <li class=""><a href="/wiki/B_chain/c_transition" class="">
+    <li class=""><a href="/wiki/B_chain/c_transition" class="menu-link">
           折返
         </a></li></ul></li>
     <li class=""><input type="checkbox" id="
@@ -132,13 +132,13 @@
             <i class="fas fa-angle-down fa-lg"></i>
           </span>
         </label><ul class="" data-menu-depth="6">
-    <li class=""><a href="/wiki/C_tactics/b_middle" class="">
+    <li class=""><a href="/wiki/C_tactics/b_middle" class="menu-link">
           中盤
         </a><ul class="" data-menu-depth="7">
-    <li class=""><a href="/wiki/C_tactics/b_middle/i_intro" class="">
+    <li class=""><a href="/wiki/C_tactics/b_middle/i_intro" class="menu-link">
           概論
         </a></li></ul></li>
-    <li class=""><a href="/wiki/C_tactics/e_observation" class="">
+    <li class=""><a href="/wiki/C_tactics/e_observation" class="menu-link">
           凝視的技巧
         </a></li>
     <li class=""><input type="checkbox" id="
@@ -152,10 +152,10 @@
             <i class="fas fa-angle-down fa-lg"></i>
           </span>
         </label><ul class="" data-menu-depth="8">
-    <li class=""><a href="/wiki/C_tactics/ii_main_chain_and_side_chain/1_key_puyo" class="">
+    <li class=""><a href="/wiki/C_tactics/ii_main_chain_and_side_chain/1_key_puyo" class="menu-link">
           關鍵氣泡
         </a></li>
-    <li class=""><a href="/wiki/C_tactics/ii_main_chain_and_side_chain/4_cross" class="">
+    <li class=""><a href="/wiki/C_tactics/ii_main_chain_and_side_chain/4_cross" class="menu-link">
           十字交叉法
         </a></li></ul></li></ul></li>
     <li class=""><input type="checkbox" id="
@@ -169,10 +169,27 @@
             <i class="fas fa-angle-down fa-lg"></i>
           </span>
         </label><ul class="" data-menu-depth="9">
-    <li class=""><a href="/wiki/D_rules/a_scoreformula" class="">
+    <li class=""><a href="/wiki/D_rules/a_scoreformula" class="menu-link">
           障礙氣泡量公式
         </a></li></ul></li></ul></li></ul></div>
-</aside><article class="color-theme-1 wiki__post container js-Pjax">
+  </div>
+</aside>
+
+<script>
+  (function() { 
+    document.addEventListener('click', function(e){
+      if(e.target.id === 'burger'){
+        e.preventDefault();
+        document.getElementById('sidebar').classList.toggle('sidebar--active');
+        document.getElementById('burger').classList.toggle('is-active');
+      }
+      else if(e.target.classList.contains('menu-link')){
+        document.getElementById('sidebar').classList.toggle('sidebar--active');
+        document.getElementById('burger').classList.toggle('is-active');
+      }
+    });
+  })();
+</script><article class="color-theme-1 wiki__post container js-Pjax">
   <div class="markdown-section">
     <h1>標籤：副砲</h1><div class="tagsearch__box box">
     <a href="/wiki/B_chain/c_transition">
@@ -229,7 +246,7 @@
   </div>
 </article>
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML&locale=zh-hant' async></script>
 <script>
   (function() { 
     var pjax = new Pjax({
