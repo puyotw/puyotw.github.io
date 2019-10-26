@@ -13,9 +13,9 @@
 <meta property="og:url" content="https://puyo.tw/wiki/C_tactics/b_middle_stage/ii_main_chain_and_side_chain/1_key_puyo" />
 <meta property="og:site_name" content="魔法氣泡中文百科" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-24T18:10:52+00:00" />
+<meta property="article:published_time" content="2019-10-26T13:41:57+00:00" />
 <script type="application/ld+json">
-{"description":"在概論中我們提到，玩家主要的連鎖稱為「主砲」，而另一方面，除了主砲之外，玩家也可以有「副砲」，也就是其他比較小的連鎖。舉個例子：","@type":"BlogPosting","url":"https://puyo.tw/wiki/C_tactics/b_middle_stage/ii_main_chain_and_side_chain/1_key_puyo","headline":"關鍵氣泡","dateModified":"2019-10-24T18:10:52+00:00","datePublished":"2019-10-24T18:10:52+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://puyo.tw/wiki/C_tactics/b_middle_stage/ii_main_chain_and_side_chain/1_key_puyo"},"@context":"https://schema.org"}</script>
+{"description":"在概論中我們提到，玩家主要的連鎖稱為「主砲」，而另一方面，除了主砲之外，玩家也可以有「副砲」，也就是其他比較小的連鎖。舉個例子：","@type":"BlogPosting","url":"https://puyo.tw/wiki/C_tactics/b_middle_stage/ii_main_chain_and_side_chain/1_key_puyo","headline":"關鍵氣泡","dateModified":"2019-10-26T13:41:57+00:00","datePublished":"2019-10-26T13:41:57+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://puyo.tw/wiki/C_tactics/b_middle_stage/ii_main_chain_and_side_chain/1_key_puyo"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"><link type="application/atom+xml" rel="alternate" href="https://puyo.tw/feed.xml" title="魔法氣泡中文百科" /></head>
@@ -259,13 +259,61 @@
     <h1>關鍵氣泡</h1><div class="tags are-medium"><a class="tag is-link" href="/wiki/tags/%E6%88%B0%E8%A1%93">戰術</a><a class="tag is-link" href="/wiki/tags/%E4%B8%AD%E7%9B%A4">中盤</a><a class="tag is-link" href="/wiki/tags/%E5%89%AF%E7%A0%B2">副砲</a><a class="tag is-link" href="/wiki/tags/%E5%90%8C%E6%B6%88">同消</a><a class="tag is-link" href="/wiki/tags/%E9%97%9C%E9%8D%B5%E6%B0%A3%E6%B3%A1">關鍵氣泡</a></div><div class="post-content e-content" itemprop="articleBody">
   <p>在概論中我們提到，玩家主要的連鎖稱為「主砲」，而另一方面，除了主砲之外，玩家也可以有「副砲」，也就是其他比較小的連鎖。舉個例子：</p>
 
-<p><img src="https://i.imgur.com/O0hbn17.png" alt="圖1" /></p>
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+||             ||
+|| Y           ||
+|| Y           ||
+|| B       Y B ||
+|| B B   R R R ||
+|| G G   Y Y Y ||
+|| G B G B B B ||
+|| B R B Y G R ||
+|| B Y Y G R R ||
+|| R R R Y G G ||
+++=============++</pre>
 
-<p>在圖1中，主砲從一樓右下角的紅色開始，有六連鎖，而副砲有兩個：</p>
+<p>在上圖中，主砲從一樓右下角被蓋住的紅色L字開始，有六連鎖，而副砲有兩個：</p>
 <ol>
-  <li>從D行黃色引爆有三連鎖，</li>
-  <li>從C行綠色引爆有四連鎖。</li>
+  <li>從D行紅色發火有三連鎖，</li>
+  <li>從C行綠色發火有四連鎖。</li>
 </ol>
+
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+||             ||
+|| Y     R     ||
+|| Y           ||
+|| B       Y B ||
+|| B B   R R R ||
+|| G G   Y Y Y ||
+|| G B G B B B ||
+|| B R B Y G R ||
+|| B Y Y G R R ||
+|| R R R Y G G ||
+++=============++</pre>
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+||             ||
+|| Y           ||
+|| Y           ||
+|| B   G   Y B ||
+|| B B   R R R ||
+|| G G   Y Y Y ||
+|| G B G B B B ||
+|| B R B Y G R ||
+|| B Y Y G R R ||
+|| R R R Y G G ||
+++=============++</pre>
+<figure>
+<figcaption><em>圖 1</em>：左圖：從D行紅色發火有三連鎖；右圖：從C行綠色發火有四連鎖。
+</figcaption></figure>
 
 <p>像上圖這樣有副砲的連鎖，在戰術上具有優勢，因為副砲可用來干擾對手。如果成功用副砲逼出了對手的主砲，那還能利用對手施放連鎖的硬直時間加連鎖。</p>
 
@@ -277,25 +325,221 @@
 
 <p>繼續以圖1舉例。一樓的主砲原本有六連鎖，二樓右側的副砲是三連鎖。此時若是在F行放上一顆紅色，那麼副砲跟主砲就接起來了，成為九連鎖！</p>
 
-<p><img src="https://i.imgur.com/KX2BJ0s.png" alt="圖2" /></p>
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+||             ||
+|| Y           ||
+|| Y         R ||
+|| B       Y B ||
+|| B B   R R R ||
+|| G G   Y Y Y ||
+|| G B G B B B ||
+|| B R B Y G R ||
+|| B Y Y G R R ||
+|| R R R Y G G ||
+++=============++</pre>
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+||             ||
+|| Y     R     ||
+|| Y         R ||
+|| B       Y B ||
+|| B B   R R R ||
+|| G G   Y Y Y ||
+|| G B G B B B ||
+|| B R B Y G R ||
+|| B Y Y G R R ||
+|| R R R Y G G ||
+++=============++</pre>
 
-<p>換個角度想，<strong>如果不放上那顆紅色，那二樓與一樓就接不起來，可以將二樓作為副砲</strong>。F行的這顆紅色可以把連鎖接起來，我們就把他稱為<em>關鍵氣泡</em>，而在這裡，我們刻意不放上關鍵氣泡，藉此將連鎖拆成數段，利於中盤的攻防。如此作出來的副砲，可當作小連鎖騷擾對方／防禦對方；如果副砲無利可圖時，再把關鍵氣泡放上，與主砲連起來即可。</p>
+<p>換個角度想，<strong>如果不放上F行那顆紅色，那二樓與一樓就接不起來，可以將二樓作為副砲</strong>。F行的這顆紅色可以把連鎖接起來，我們就把他稱為<em>關鍵氣泡</em>，而在這裡，我們刻意不放上關鍵氣泡，藉此將連鎖拆成數段，利於中盤的攻防。如此作出來的副砲，可當作小連鎖騷擾對方／防禦對方；如果副砲無利可圖時，再把關鍵氣泡放上，與主砲連起來即可。</p>
 
 <p>關鍵氣泡常常指的是與一樓接起來的氣泡，但是不限於此。放上關鍵氣泡的作法，又稱為「確定化<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>」。再來幾個刻意不放上關鍵氣泡的例子：</p>
 
-<p><img src="https://i.imgur.com/JEk5Moa.png" alt="圖3" /></p>
+<h2 id="關鍵氣泡例1">關鍵氣泡例1</h2>
+
+<p>在下圖的<a href="/wiki/B_chain/b_regular_form/i_stairs">3-1階梯</a>中，連鎖已經排到二樓，主砲發火點是B行的黃色，不過右側的連鎖還未與主砲連接。</p>
+
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+|| G           ||
+|| B       Y   ||
+|| G       Y   ||
+|| Y       B Y ||
+|| G Y     B Y ||
+|| G Y     R B ||
+|| G R Y   B B ||
+|| B G R   G R ||
+|| B G R Y G R ||
+|| B G R Y G R ||
+++=============++</pre>
+
+<p>此時若是在D行擺上關鍵氣泡的黃綠，可以將連鎖接起來；另一方面，若是直接消除D行的綠色，會是個二連三消的副砲。</p>
+
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+|| G           ||
+|| B Y     Y   ||
+|| G       Y   ||
+|| Y       B Y ||
+|| G Y     B Y ||
+|| G Y     R B ||
+|| G R Y G B B ||
+|| B G R Y G R ||
+|| B G R Y G R ||
+|| B G R Y G R ||
+++=============++</pre>
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+|| G           ||
+|| B       Y   ||
+|| G       Y   ||
+|| Y       B Y ||
+|| G Y     B Y ||
+|| G Y   G R B ||
+|| G R Y   B B ||
+|| B G R   G R ||
+|| B G R Y G R ||
+|| B G R Y G R ||
+++=============++</pre>
+<figure>
+<figcaption><em>圖 2</em>：左圖：擺上D行的黃綠後，從B行黃色發火主線；右圖：直接消除D行的綠色，是個二連三消的副砲。
+</figcaption></figure>
 
 <p>D行擺上黃綠，可以將連鎖接起來；若是直接消除D行綠色，會是個二連三消的副砲</p>
 
-<p><img src="https://i.imgur.com/CkEfgVe.png" alt="圖4" /></p>
+<h2 id="關鍵氣泡例2">關鍵氣泡例2</h2>
 
-<p>C行擺上藍綠後，二樓從右側綠色消除有五連鎖；若是直接消除C行綠色，會有二連雙消的三連鎖</p>
+<p>下圖的連鎖亦已經排到二樓，而且我們可以看出二樓連鎖的形狀有點像是<a href="/wiki/B_chain/b_regular_form/ii_sandwich">鑰匙排法</a>。</p>
+
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+||             ||
+||             ||
+|| R G     R R ||
+|| R Y   B Y R ||
+|| Y G   G G Y ||
+|| R Y G B G Y ||
+|| R Y G B B R ||
+|| G G B G R R ||
+|| Y Y Y B B B ||
+|| G G G R R R ||
+++=============++</pre>
+
+<p>這個主砲有相當多的關鍵氣泡並未放上，不過相對的，他的副砲很多。首先，如果要發火主線的話，需要擺上C行的藍綠、F行的黃綠，以及AB行兩顆二樓通往一樓的黃綠，然後才能發火。</p>
+
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||         R   ||
+||           G ||
+|| G Y       Y ||
+|| R G     R R ||
+|| R Y G B Y R ||
+|| Y G B G G Y ||
+|| R Y G B G Y ||
+|| R Y G B B R ||
+|| G G B G R R ||
+|| Y Y Y B B B ||
+|| G G G R R R ||
+++=============++</pre>
+<figure>
+<figcaption><em>圖 3</em>：擺上許多關鍵氣泡後，可以從E行紅色發火主線。
+</figcaption></figure>
+
+<p>假設不打算擺完全部的關鍵氣泡，也可以在F行擺上黃綠後，直接從E行紅色發火，這會是個四連鎖的副砲；如果把C行的藍綠也補上的話，那就是個七連鎖的大副砲。</p>
+
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||         R   ||
+||           G ||
+||           Y ||
+|| R G     R R ||
+|| R Y   B Y R ||
+|| Y G   G G Y ||
+|| R Y G B G Y ||
+|| R Y G B B R ||
+|| G G B G R R ||
+|| Y Y Y B B B ||
+|| G G G R R R ||
+++=============++</pre>
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||         R   ||
+||           G ||
+||           Y ||
+|| R G     R R ||
+|| R Y G B Y R ||
+|| Y G B G G Y ||
+|| R Y G B G Y ||
+|| R Y G B B R ||
+|| G G B G R R ||
+|| Y Y Y B B B ||
+|| G G G R R R ||
+++=============++</pre>
+<figure>
+<figcaption><em>圖 4</em>：左圖：在F行擺上黃綠後，從E行紅色發火四連鎖的副砲；右圖：如果C行的藍綠也補上了，就是個七連鎖的副砲。
+</figcaption></figure>
+
+<p>要是連一顆關鍵氣泡都不想補，也可以直接消掉C行的綠色，這是個<a href="/wiki/B_chain/g_others/i_power_chain">二連雙消</a>的三連鎖！</p>
+
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+||             ||
+||             ||
+|| R G G   R R ||
+|| R Y   B Y R ||
+|| Y G   G G Y ||
+|| R Y G B G Y ||
+|| R Y G B B R ||
+|| G G B G R R ||
+|| Y Y Y B B B ||
+|| G G G R R R ||
+++=============++</pre>
+
+<p>最後，來一個比較特別的副砲例子：在E、F行擺上幾顆氣泡，但讓這些氣泡的排列方式跟前面不同，然後從D行發火紅色。結果這個副砲神奇地從右邊消到左邊，總共有八連鎖！</p>
+
+<pre class="puyo-simulator" data-mode="0">
+                 
+||             ||
+||             ||
+||       R   R ||
+|| G Y     G Y ||
+|| R G     R R ||
+|| R Y   B Y R ||
+|| Y G   G G Y ||
+|| R Y G B G Y ||
+|| R Y G B B R ||
+|| G G B G R R ||
+|| Y Y Y B B B ||
+|| G G G R R R ||
+++=============++</pre>
+
+<p>這個副砲的連鎖方向很不直觀，因此有很大機會能造成對手的判斷錯誤。</p>
+
+<p>如果對手事先知道是八連鎖，正確的選擇是：趁著副砲的施放時間把他的連鎖加大。但要是他判斷錯誤、認為這個副砲沒那麼大，他可能會用個五連鎖來對應，結果就是他白白浪費了五連鎖的氣泡量，而且五連鎖的施放期間他也不能延伸連鎖了，等於浪費資源也浪費時間。</p>
 
 <h2 id="何時該擺上關鍵氣泡">何時該擺上關鍵氣泡？</h2>
 
 <p>前面提到，刻意不擺關鍵氣泡的作法能將連鎖拆成數段，有利中盤的攻防。那麼，何時該擺上關鍵氣泡呢？擺上關鍵氣泡的有利或不利，如何判斷？有幾個指標可作為參考<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>：</p>
 <ul>
-  <li>快要被埋住的時候：如果在沒擺上關鍵氣泡的情況下，對手給了兩～三排的攻擊，吃下來的話很難再擺上關鍵氣泡，連鎖也就接不起來，若對手再用主砲追擊便會相當不利。因此，若是注意到對手要作小型攻擊，可將關鍵氣泡放上。</li>
+  <li>快要被蓋住的時候：如果在沒擺上關鍵氣泡的情況下，對手給了兩～三排的攻擊，吃下來的話很難再擺上關鍵氣泡，連鎖也就接不起來，若對手再用主砲追擊便會相當不利。因此，若是注意到對手要作小型攻擊，可先將關鍵氣泡放上。</li>
   <li>雙方暫時都沒有要用小連鎖攻防的時候：例如對手沒有要用小連鎖催促，此時自己可選擇將重點放在主砲的延伸，可將關鍵氣泡放上</li>
   <li>其他無利可圖的時候：例如對手也有副砲，而且比你的還大。那此時將副砲打出去可能會導致不利，不如將關鍵氣泡放上。</li>
 </ul>
